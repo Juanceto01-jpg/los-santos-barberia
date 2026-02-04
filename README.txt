@@ -31,7 +31,7 @@ Sistema de reservas online interactivo para Los Santos Barbería.
 
 ## 🚀 Demo en Vivo
 
-👉 [Ver Demo](https://TU_USUARIO.github.io/los-santos-barberia/)
+👉 [Ver Demo](https://Juanceto01-jpg.github.io/los-santos-barberia/)
 
 ## 💻 Instalación Local
 ```bash
@@ -42,11 +42,6 @@ git clone https://github.com/TU_USUARIO/los-santos-barberia.git
 cd los-santos-barberia
 
 # Abrir index.html en tu navegador
-```
-
-## 📸 Screenshots
-
-*(Puedes agregar capturas de pantalla aquí después)*
 
 ## 🎯 Funcionalidades Técnicas
 
@@ -59,14 +54,10 @@ cd los-santos-barberia
 
 ## 👨‍💻 Autor
 
-**[Tu Nombre]**
-- GitHub: [@TU_USUARIO](https://github.com/TU_USUARIO)
-- Proyecto: Trabajo Práctico Final - Diseño Web
+**[Juan Balbuena]**
+- GitHub: [Juanceto01-jpg](https://github.com/Juanceto01-jpg)
+- Proyecto: Los Santos Barberia - Diseño Web
 
 ## 📄 Licencia
 
 Este proyecto fue creado con fines educativos.
-
----
-
-⭐ Si te gustó el proyecto, dejá una estrella!
