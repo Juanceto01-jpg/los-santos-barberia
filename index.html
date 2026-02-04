@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Santos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">LOS SANTOS</div>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+            <!-- Slide 1: Hero -->
+            <div class="carousel-slide hero-slide">
+                <div class="hero-content">
+                    <h1>LOS SANTOS</h1>
+                    <p>Potenciamos tu imagen 😎✂️</p>
+                    
+                    <div class="cards-container">
+                        <div class="info-card">
+                            <h3>Los Santos</h3>
+                            <p>Potenciamos tu imagen con estilo y profesionalismo</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>Nuestros Servicios</h3>
+                            <p>Cortes, barbería y tatuajes de primera calidad</p>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="goToSlide(1)">Reservar Turno</button>
+                </div>
+            </div>
+
+            <!-- Slide 2: Service Selection -->
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h2 class="slide-title">Elegí Tu Servicio</h2>
+                    
+                    <div class="services-grid">
+                        <div class="service-card" onclick="selectService('Corte de Pelo', '$10.000')">
+                            <div class="service-icon">✂️</div>
+                            <h3>Corte de Pelo</h3>
+                            <p class="price">$10.000</p>
+                        </div>
+                        
+                        <div class="service-card" onclick="selectService('Corte + Barba', '$13.000')">
+                            <div class="service-icon">🪒</div>
+                            <h3>Corte + Barba</h3>
+                            <p class="price">$13.000</p>
+                        </div>
+                        
+                        <div class="service-card" onclick="selectService('Tatuaje', 'A consultar')">
+                            <div class="service-icon">✒️</div>
+                            <h3>Tatuaje</h3>
+                            <p class="price">A consultar</p>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="goToSlide(0)">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Professional Selection (Barberos) -->
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h2 class="slide-title">Elegí Tu Barbero</h2>
+                    
+                    <div class="professionals-grid">
+                        <div class="professional-card" onclick="selectProfessional('Eduardo')">
+                            <div class="professional-avatar">✂️</div>
+                            <h3>Eduardo</h3>
+                        </div>
+                        
+                        <div class="professional-card" onclick="selectProfessional('Alexis')">
+                            <div class="professional-avatar">✂️</div>
+                            <h3>Alexis</h3>
+                        </div>
+                        
+                        <div class="professional-card" onclick="selectProfessional('Agustín')">
+                            <div class="professional-avatar">✂️</div>
+                            <h3>Agustín</h3>
+                        </div>
+                        
+                        <div class="professional-card" onclick="selectProfessional('Lucho')">
+                            <div class="professional-avatar">✂️</div>
+                            <h3>Lucho</h3>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="goToSlide(1)">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Professional Selection (Tatuador) -->
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h2 class="slide-title">Elegí Tu Tatuador</h2>
+                    
+                    <div class="professionals-grid" style="max-width: 400px; margin: 0 auto;">
+                        <div class="professional-card" onclick="selectTattooArtist('Nahuel')">
+                            <div class="professional-avatar">✒️</div>
+                            <h3>Nahuel</h3>
+                        </div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="goToSlide(1)">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Date Selection -->
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h2 class="slide-title">Selecciona una Fecha</h2>
+                    
+                    <div class="calendar-container" id="calendar">
+                        <div class="calendar-day header">Lun</div>
+                        <div class="calendar-day header">Mar</div>
+                        <div class="calendar-day header">Mié</div>
+                        <div class="calendar-day header">Jue</div>
+                        <div class="calendar-day header">Vie</div>
+                        <div class="calendar-day header">Sáb</div>
+                        <div class="calendar-day header">Dom</div>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="goBack()">Volver</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Time Selection -->
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h2 class="slide-title">Selecciona un Horario</h2>
+                    
+                    <div class="time-slots" id="timeSlots"></div>
+
+                    <div class="nav-buttons">
+                        <button class="btn-secondary" onclick="goToSlide(4)">Volver</button>
+                        <button class="btn" onclick="confirmBooking()">Hacer Tu Reserva</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Confirmation -->
+            <div class="carousel-slide">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">✅</div>
+                    <h2 class="slide-title">¡Reserva Confirmada!</h2>
+                    <p style="color: #c084fc; font-size: 1.2rem; margin-bottom: 2rem;">
+                        Gracias por confiar en Los Santos
+                    </p>
+
+                    <div class="booking-summary" id="bookingSummary"></div>
+
+                    <div class="contact-info">
+                        <h4>Mantente Actualizado</h4>
+                        <p>📷 Instagram: LosSantos.Groudstreet</p>
+                        <p>📍 Ubicación: Sobre Defensa Sur</p>
+                        <p>🕐 Horarios: Lun-Dom 10:00 - 20:30</p>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                        <button class="btn" onclick="sendWhatsAppConfirmation()" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+                            📱 Confirmar por WhatsApp
+                        </button>
+                        <button class="btn-secondary" onclick="resetBooking()">
+                            Nueva Reserva
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Contacto Tatuador -->
+            <div class="carousel-slide">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">✒️</div>
+                    <h2 class="slide-title">Reserva tu Tatuaje</h2>
+                    <p style="color: #c084fc; font-size: 1.2rem; margin-bottom: 2rem;">
+                        Para reservar un tatuaje, comunicate directamente con Nahuel
+                    </p>
+
+                    <div class="booking-summary">
+                        <h3>¿Por qué contactar directamente?</h3>
+                        <p>• Cada tatuaje es único y requiere una consulta personalizada</p>
+                        <p>• Necesitamos conocer el diseño, tamaño y detalles</p>
+                        <p>• Los tiempos varían según la complejidad</p>
+                        <p>• Coordinamos el mejor día y horario para vos</p>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                        <button class="btn" onclick="contactTattooArtist()" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);">
+                            📱 Contactar a Nahuel
+                        </button>
+                        <button class="btn-secondary" onclick="resetBooking()">
+                            Volver al Inicio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

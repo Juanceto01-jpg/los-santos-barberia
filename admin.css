@@ -1,0 +1,407 @@
+/* Contenedor principal */
+.admin-container {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 2rem;
+}
+
+/* Header del admin */
+.admin-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.admin-title {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Righteous', sans-serif;
+    margin-bottom: 1rem;
+}
+
+/* Botones de acciones principales */
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.btn-create {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%) !important;
+}
+
+/* Filtros */
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    border-radius: 20px;
+    border: 2px solid #4c1d95;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    color: #c084fc;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.8rem;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #4c1d95;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+/* Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    border-radius: 15px;
+    border: 2px solid #4c1d95;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+/* Lista de reservas */
+.reservations-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.reservation-card {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    border-radius: 15px;
+    border: 2px solid #4c1d95;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.reservation-card:hover {
+    border-color: #a855f7;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+.reservation-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info-value.highlight {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+}
+
+.btn-delete {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(239, 68, 68, 0.5);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #9ca3af;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #c084fc;
+    font-size: 1.2rem;
+}
+
+/* Modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.95) 0%, rgba(20, 15, 35, 0.98) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #a855f7;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    color: #a855f7;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.modal-title-create {
+    color: #8b5cf6;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    color: #c084fc;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid #4c1d95;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #a855f7;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-actions .btn,
+.modal-actions .btn-secondary {
+    flex: 1;
+}
+
+/* Responsive Mejorado */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+        margin: 80px auto 2rem;
+    }
+
+    .admin-title {
+        font-size: 2rem;
+    }
+
+    .admin-header p {
+        font-size: 0.9rem;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .admin-actions .btn {
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+
+    /* Filtros en celular */
+    .filters {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    /* Estadísticas en celular */
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    /* Tarjetas de reserva en celular */
+    .reservation-card {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .reservation-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .info-label {
+        font-size: 0.7rem;
+    }
+
+    .info-value {
+        font-size: 0.9rem;
+    }
+
+    .info-value.highlight {
+        font-size: 1rem;
+    }
+
+    .btn-delete {
+        width: 100%;
+        padding: 0.9rem;
+    }
+
+    /* Modales en celular */
+    .modal {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        max-height: 85vh;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .form-control {
+        padding: 0.9rem;
+        font-size: 16px; /* Evita zoom automático en iOS */
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn,
+    .modal-actions .btn-secondary {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Para celulares pequeños (iPhone SE, etc) */
+@media (max-width: 480px) {
+    .admin-title {
+        font-size: 1.6rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-info {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        padding: 1rem;
+    }
+}

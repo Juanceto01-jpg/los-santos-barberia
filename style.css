@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(30, 20, 40, 0.98) 100%);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #a855f7;
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 4px;
+    font-family: 'Righteous', sans-serif;
+    text-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(30, 20, 50, 0.9)), 
+                radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+    position: relative;
+}
+
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(168, 85, 247, 0.03) 2px,
+        rgba(168, 85, 247, 0.03) 4px
+    );
+    pointer-events: none;
+}
+
+/* Slide 1 - Hero */
+.hero-slide {
+    flex-direction: column;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Righteous', sans-serif;
+    letter-spacing: 8px;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+    }
+    to {
+        filter: drop-shadow(0 0 30px rgba(168, 85, 247, 1));
+    }
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    color: #c084fc;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #4c1d95;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 50px rgba(168, 85, 247, 0.4);
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: #d1d5db;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 0.3s;
+    display: inline-block;
+    border: 2px solid #a855f7;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.8);
+}
+
+/* Slide Content - Common Styles */
+.slide-content {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.slide-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Righteous', sans-serif;
+    letter-spacing: 4px;
+    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.6));
+}
+
+/* Service Selection */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.service-card {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #4c1d95;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #a855f7;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.5);
+}
+
+.service-card.selected {
+    border-color: #ec4899;
+    background: linear-gradient(135deg, rgba(50, 30, 80, 0.9) 0%, rgba(30, 20, 50, 0.95) 100%);
+}
+
+.service-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.8));
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.service-card .price {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Professional Selection */
+.professionals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.professional-card {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #4c1d95;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(168, 85, 247, 0.2);
+}
+
+.professional-card:hover {
+    transform: translateY(-10px);
+    border-color: #a855f7;
+    box-shadow: 0 20px 60px rgba(168, 85, 247, 0.5);
+}
+
+.professional-card.selected {
+    border-color: #ec4899;
+    background: linear-gradient(135deg, rgba(50, 30, 80, 0.9) 0%, rgba(30, 20, 50, 0.95) 100%);
+}
+
+.professional-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto 1rem;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+}
+
+.professional-card h3 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Calendar */
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.7rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    border: 1px solid #4c1d95;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.calendar-day:hover:not(.header) {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.6);
+}
+
+.calendar-day.selected {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    box-shadow: 0 5px 25px rgba(168, 85, 247, 0.8);
+}
+
+.calendar-day.header {
+    color: #9ca3af;
+    cursor: default;
+    background: transparent;
+    border: none;
+}
+
+/* Time Slots */
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+.time-slot {
+    padding: 1.2rem;
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    border: 1px solid #4c1d95;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.time-slot:hover {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+}
+
+.time-slot.selected {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+}
+
+.time-slot.booked {
+    background: linear-gradient(135deg, rgba(60, 40, 70, 0.5) 0%, rgba(40, 30, 50, 0.5) 100%);
+    border-color: #3d2852;
+    position: relative;
+}
+
+.time-slot.booked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #ef4444;
+    transform: translateY(-50%) rotate(-15deg);
+}
+
+/* Confirmation */
+.confirmation-content {
+    text-align: center;
+    max-width: 600px;
+}
+
+.confirmation-icon {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.8));
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.booking-summary {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.8) 0%, rgba(20, 15, 35, 0.9) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #4c1d95;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.booking-summary h3 {
+    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.booking-summary p {
+    color: #d1d5db;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    background: linear-gradient(135deg, rgba(30, 20, 50, 0.6) 0%, rgba(20, 15, 35, 0.8) 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid #4c1d95;
+    margin-top: 2rem;
+}
+
+.contact-info h4 {
+    background: linear-gradient(135deg, #c084fc 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #9ca3af;
+    margin: 0.5rem 0;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    padding: 1rem 2rem;
+    background: transparent;
+    color: #a855f7;
+    border: 2px solid #a855f7;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .professionals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slide-title {
+        font-size: 2rem;
+    }
+
+    .carousel-slide {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-content p {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+    }
+
+    .calendar-container {
+        gap: 0.4rem;
+    }
+
+    .calendar-day {
+        font-size: 0.8rem;
+    }
+}
+/* Horarios bloqueados - mejorados */
+.time-slot.booked {
+    background: linear-gradient(135deg, rgba(60, 40, 70, 0.3) 0%, rgba(40, 30, 50, 0.3) 100%) !important;
+    border-color: #3d2852 !important;
+    color: #6b7280 !important;
+    position: relative;
+    cursor: not-allowed !important;
+}
+
+.time-slot.booked::before {
+    content: '🚫';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.8rem;
+}
+
+.time-slot.booked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: #ef4444;
+    transform: translateY(-50%) rotate(-15deg);
+}
+
+.time-slot.booked:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
